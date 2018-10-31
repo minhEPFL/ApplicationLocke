@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bouton3">Partager mon vélo avec un ami</string>
+    <string name="bouton4">Localize</string>
+    <string name="buttonretour">retour</string>
+
 </resources>
