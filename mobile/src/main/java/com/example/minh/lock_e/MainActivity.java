@@ -13,22 +13,26 @@ import android.widget.Toast;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
+    private Button firstbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button1=(Button)findViewById(R.id.button3);
-        button1.setOnClickListener((OnClickListener)this);
-    }
 
+        Button button1 = (Button) findViewById(R.id.button3);
+        button1.setOnClickListener(this);
+    }
 
     public void onClick (View view){
         if(view.getId()==R.id.button3){
             Toast.makeText(this,"coucou", Toast.LENGTH_SHORT).show();
-            Intent share = new Intent(MainActivity.this,sharebike.class);
-            startActivity(share);
+
+            Intent i = new Intent(MainActivity.this,sharebike.class);
+            MainActivity.this.startActivity(i);
+
 
         }
-    }
+}
 
 }
