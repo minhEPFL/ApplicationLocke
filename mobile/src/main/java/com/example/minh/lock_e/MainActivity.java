@@ -20,18 +20,23 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button1 = (Button) findViewById(R.id.button3);
-        button1.setOnClickListener(this);
+        Button buttonshare = (Button) findViewById(R.id.button3);
+        buttonshare.setOnClickListener(this);
+        Button buttonmap = (Button) findViewById(R.id.button4);
+        buttonmap.setOnClickListener(this);
     }
 
     public void onClick (View view){
+
         if(view.getId()==R.id.button3){
-            Toast.makeText(this,"coucou", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(MainActivity.this,sharebike.class);
             MainActivity.this.startActivity(i);
+        }
 
-
+        if(view.getId()==R.id.button4){
+            Intent i = new Intent(MainActivity.this, activitycarte.class);
+            MainActivity.this.startActivity(i);
         }
 }
 

@@ -6,5 +6,6 @@
     <string name="bouton3">Partager mon vélo avec un ami</string>
     <string name="bouton4">Localize</string>
     <string name="buttonretour">retour</string>
+    <string name="title_activity_activitycarte">activitycarte</string>
 
 </resources>
