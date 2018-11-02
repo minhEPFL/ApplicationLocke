@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,16 +8,13 @@
     android:layout_margin="10dp"
     android:background="@drawable/velo"
     tools:context=".MainActivity" >
-    <TextView
-        android:layout_width="200dp"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lock_E"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="#ccc"
-        android:layout_marginTop="90dp"
-        android:layout_marginBottom="75dp"
-        android:textColor="#222" />
+        app:srcCompat="@drawable/logo" />
+
     <Switch
         android:id="@+id/switch2"
         android:layout_width="wrap_content"
@@ -41,4 +39,5 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:text="@string/bouton3" />
+
 </LinearLayout>

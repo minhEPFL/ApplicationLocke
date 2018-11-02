@@ -15,10 +15,10 @@
         <Button
             android:id="@+id/Locate"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="50sp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50sp"
             android:layout_marginTop="100sp"
-            android:text="Localiser" />
+            android:text="@string/Locate" />
 
         <ImageView
             android:id="@+id/imageView2"
