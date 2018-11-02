@@ -9,24 +9,18 @@ import android.widget.Toast;
 import android.os.Bundle;
 
 public class sharebike extends AppCompatActivity implements OnClickListener {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sharebike);
         Button buttonRetour = (Button) findViewById((R.id.buttonretour));
         buttonRetour.setOnClickListener((OnClickListener)this);
-
     }
-
 
     public void onClick(View view) {
         if (view.getId() == R.id.buttonretour) {
-            //setContentView(R.layout.activity_sharebike);
             Intent i = new Intent(sharebike.this,MainActivity.class);
             sharebike.this.startActivity(i);
         }
-
-
     }
 }

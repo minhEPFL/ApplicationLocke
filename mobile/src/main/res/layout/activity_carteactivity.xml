@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/velo"
+    tools:context=".carteactivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/Locate"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="50sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100sp"
+            android:text="Localiser" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="50sp"
+            android:layout_marginBottom="50sp"
+            app:srcCompat="@drawable/imagemaps" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="185dp" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
