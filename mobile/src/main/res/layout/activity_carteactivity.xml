@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/velo"
-    tools:context=".carteactivity">
+    tools:context=".MapActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,10 +27,5 @@
             android:layout_marginTop="50sp"
             android:layout_marginBottom="50sp"
             app:srcCompat="@drawable/imagemaps" />
-
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="185dp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
