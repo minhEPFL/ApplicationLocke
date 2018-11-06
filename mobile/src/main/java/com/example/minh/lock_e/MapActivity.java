@@ -26,7 +26,8 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
     private GoogleMap mMap;
     private Location actuallocation;
     private LatLng Loc;
-
+    private LocationManager locationManager;
+    private LocationListener locationListener;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -36,8 +37,8 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        LocationListener locationListener = new LocationListener() {
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        locationListener = new LocationListener() {
             public void onLocationChanged(Location location)
             {
                 Loc=new LatLng(location.getLatitude(), location.getLongitude());
@@ -63,6 +64,11 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        locationManager.removeUpdates(locationListener);
+    }
 
     public void onClick(View view) {
         if (view.getId() == R.id.Locate) {
@@ -80,6 +86,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
             mMap.addMarker(new MarkerOptions().position(Loc).title("Marker in Sydney"));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(Loc));
             mMap.getMinZoomLevel();
+            mMap.setMyLocationEnabled(true);
             }
             //codeicipourobtenirlalocalisation
             //SmsManager smsManager = SmsManager.getDefault();
@@ -95,9 +102,17 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
         LatLng localisation = new LatLng(48.9, 2.33);
-
+        mMap.isMyLocationEnabled();
         mMap.addMarker(new MarkerOptions().position(localisation).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(localisation));
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        mMap.getMinZoomLevel();
+        mMap.resetMinMaxZoomPreference();
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) //on vérifie qu'on a bien les permissions
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission is not granted, Ask for permision
+            ActivityCompat.requestPermissions(this,new String[] { Manifest.permission.SEND_SMS}, 1);
+        }
+
+        mMap.setMyLocationEnabled(true);
 }}
