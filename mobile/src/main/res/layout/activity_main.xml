@@ -9,11 +9,17 @@
     android:background="@drawable/velo"
     tools:context=".MainActivity" >
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="73dp"
+        android:layout_height="29dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="50sp"
+        android:layout_marginTop="75sp"
+        android:layout_marginBottom="100sp"
+        android:background="@drawable/fonddetexte"
+        android:gravity="center"
+        android:text="@string/MainTitre" />
 
     <Switch
         android:id="@+id/switch2"
@@ -23,21 +29,29 @@
         android:layout_marginBottom="50dp"
         android:background="#888"
         android:gravity="center"
-        android:text="  Open/Close          "
+        android:text="@string/MainSwitch"
         android:textOff="Close"
         android:textOn="Open" />
+
+    <Button
+        android:id="@+id/linkbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/linkbutton" />
+
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/bouton4" />
+
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
         android:text="@string/bouton3" />
 
 </LinearLayout>

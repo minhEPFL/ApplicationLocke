@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Share my Bike"
+        android:text="@string/sharebike"
         android:layout_gravity="center"
         android:gravity="center"
         android:background="#ccc"
@@ -20,31 +20,42 @@
         android:textColor="#222"
         />
 
-    <Switch
-        android:id="@+id/switch2"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:background="#888"
-        android:layout_marginBottom="50dp"
-        android:text="  Share          " />
 
-    <EditText
-        android:id="@+id/editText"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_height="33dp"
         android:gravity="center"
-        android:background="#aaa"
-        android:ems="10"
-        android:inputType="phone" />
+        android:layout_gravity="center_horizontal"
+        android:background="#ccc"
+        android:layout_marginVertical="30sp"
+        android:layout_marginHorizontal="30sp"
+        android:text="Enter the phone number of your friend" />
 
-    <Button
-        android:id="@+id/buttonretour"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="@string/buttonretour" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/numberfriend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#eee"
+            android:ems="10"
+            android:gravity="center"
+            android:layout_marginHorizontal="10sp"
+            android:text="+33"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/buttonshare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10sp"
+            android:text="Share" />
+    </LinearLayout>
 
 </LinearLayout>

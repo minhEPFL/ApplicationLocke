@@ -18,16 +18,37 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         buttonshare.setOnClickListener(this);
         Button buttonmap = (Button) findViewById(R.id.button4);
         buttonmap.setOnClickListener(this);
+        Button link = (Button) findViewById(R.id.linkbutton);
+        link.setOnClickListener(this);
     }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+
+    }
+
 
     public void onClick (View view){
         if(view.getId()==R.id.button3){
-            Intent i = new Intent(MainActivity.this,SharebikeActivity.class);
+            Intent i = new Intent(MainActivity.this, ShareBikeActivity.class);
             MainActivity.this.startActivity(i);
         }
         if(view.getId()==R.id.button4){
             Intent i = new Intent(MainActivity.this, MapActivity.class);
             MainActivity.this.startActivity(i);
         }
+        if(view.getId()==R.id.linkbutton){
+            Intent i = new Intent(MainActivity.this, LinkLockActivity.class);
+            MainActivity.this.startActivity(i);
+
+        }
+
 }
 }
