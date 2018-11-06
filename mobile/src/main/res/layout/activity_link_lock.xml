@@ -7,4 +7,38 @@
     android:background="@drawable/velo"
     tools:context=".LinkLockActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="70sp"
+            android:layout_marginHorizontal="30sp"
+            android:gravity="center"
+            android:background="#ccc"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Connect to Lock-E" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:background="#777"
+            android:layout_marginBottom="100sp"
+            android:layout_marginHorizontal="50sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_marginHorizontal="80sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
