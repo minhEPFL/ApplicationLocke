@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu">
+    <item android:id="@+id/option" android:title="Options"></item>
+    <item android:id="@+id/gererlist" android:titleCondensed="Mes amis" android:title="Gérer la liste d'amis">
+        <menu>
+            <item android:id="@+id/ami1" android:title="Minh" android:checkable="true"/>
+            <item android:id="@+id/ami2" android:title="Julien" android:checkable="true"/>
+            <item android:id="@+id/ami3" android:title="Nicolas" android:checkable="true"/>
+            <item android:id="@+id/ami4" android:title="Terry" android:checkable="true"/>
+            <item android:id="@+id/ami5" android:title="Guilain" android:checkable="true"/>
+            <item android:id="@+id/ami6" android:title="Maxime" android:checkable="true"/>
+        </menu>
+    </item>
+    <!--
+    <item android:id="@+id/item5" android:title="Item 3" android:checkable="true"/>
+    <item android:id="@+id/item6" android:title="Item 4">
+        <group android:id="@+id/group1" android:checkableBehavior="all">
+            <item android:id="@+id/item7" android:title="Item 4.1"></item>
+            <item android:id="@+id/item8" android:title="Item 4.2"></item>
+        </group>
+    </item>
+
+    <group android:id="@+id/group2" android:enabled="false">
+        <item android:id="@+id/item9" android:title="Item 5.1"></item>
+        <item android:id="@+id/item10" android:title="Item 5.2"></item>
+    </group>
+
+    -->
+</menu>

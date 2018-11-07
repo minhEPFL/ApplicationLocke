@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -41,6 +43,8 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         locationListener = new LocationListener() {
             public void onLocationChanged(Location location)
             {
+                if (Loc==null){Toast.makeText(getBaseContext(), "vélo localisé", Toast.LENGTH_LONG).show();}
+
                 Loc=new LatLng(location.getLatitude(), location.getLongitude());
                 actuallocation = location;
 
@@ -68,6 +72,12 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
     protected void onPause() {
         super.onPause();
         locationManager.removeUpdates(locationListener);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        locationManager.removeUpdates(locationListener);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
     }
 
     public void onClick(View view) {
@@ -101,10 +111,12 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
 
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
-        LatLng localisation = new LatLng(48.9, 2.33);
+
+        LatLng paris = new LatLng(48.9, 2.33);
+
         mMap.isMyLocationEnabled();
-        mMap.addMarker(new MarkerOptions().position(localisation).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(localisation));
+        mMap.addMarker(new MarkerOptions().position(paris).title("vélo localisé"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(paris));
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.resetMinMaxZoomPreference();
 
@@ -113,6 +125,5 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
             // Permission is not granted, Ask for permision
             ActivityCompat.requestPermissions(this,new String[] { Manifest.permission.SEND_SMS}, 1);
         }
-
         mMap.setMyLocationEnabled(true);
 }}
