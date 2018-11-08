@@ -23,7 +23,7 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends AppCompatActivity implements View.OnClickListener , OnMapReadyCallback
+public class MapActivity extends MenuActivity implements View.OnClickListener , OnMapReadyCallback
 {
     private GoogleMap mMap;
     private Location actuallocation;

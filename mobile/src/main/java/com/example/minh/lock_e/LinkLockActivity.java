@@ -3,7 +3,7 @@ package com.example.minh.lock_e;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class LinkLockActivity extends AppCompatActivity {
+public class LinkLockActivity extends MapActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

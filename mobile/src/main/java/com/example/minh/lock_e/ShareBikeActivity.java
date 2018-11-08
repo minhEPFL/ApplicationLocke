@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.os.Bundle;
 import android.widget.EditText;
 
-public class ShareBikeActivity extends AppCompatActivity implements OnClickListener {
+public class ShareBikeActivity extends MenuActivity implements OnClickListener {
     EditText Edit1;
 
     @Override
