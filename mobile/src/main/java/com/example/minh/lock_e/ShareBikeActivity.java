@@ -1,10 +1,9 @@
 package com.example.minh.lock_e;
 import android.Manifest;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,8 +11,10 @@ import android.widget.Button;
 import android.os.Bundle;
 import android.widget.EditText;
 
+
 public class ShareBikeActivity extends MenuActivity implements OnClickListener {
-    EditText Edit1;
+    EditText Num;
+    EditText Nom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,26 +23,35 @@ public class ShareBikeActivity extends MenuActivity implements OnClickListener {
         setContentView(R.layout.activity_sharebike);
         Button buttonPartage = (Button) findViewById((R.id.buttonshare));
         buttonPartage.setOnClickListener((OnClickListener)this);
-        Edit1 = this.findViewById(R.id.numberfriend);
-
-
+        Num = this.findViewById(R.id.numberfriend);
+        Nom = this.findViewById(R.id.nom);
     }
 
     public void onClick(View view) {
+        //Si le bouton Share a été enfoncé
         if (view.getId() == R.id.buttonshare) {
+            SharedPreferences pref = getSharedPreferences("preferences", MODE_PRIVATE);
+            SharedPreferences.Editor edit = pref.edit();
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) //on vérifie qu'on a bien les permissions
                     != PackageManager.PERMISSION_GRANTED) {
                 // Permission is not granted, Ask for permision
-                ActivityCompat.requestPermissions(this,new String[] { Manifest.permission.SEND_SMS}, 1);
-            }
-            else {
-            }
-            String chaine = Edit1.getText().toString();
-            SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(chaine, null, "Ceci est un sms envoyé grâce à l'application", null, null);
+                ActivityCompat.requestPermissions(this,new String[] { Manifest.permission.SEND_SMS}, 1); }
 
-            //Intent i = new Intent(ShareBikeActivity.this,MainActivity.class);
-            //ShareBikeActivity.this.startActivity(i);
+                String number = Num.getText().toString();
+                String nom= Nom.getText().toString();
+
+              if(pref.contains("listeamis")){
+                  edit.putString("listeamis", pref.getString("listeamis", "").concat(",".concat(nom)));
+                  edit.putString("listeautor", pref.getString("listeautor", "").concat("1"));
+                  edit.apply();
+              }
+              else{
+                  edit.putString("listeamis", nom);
+                  edit.putString("listeautor", "1");
+                  edit.apply();
+              }
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(number, null, "Nous vous invitons à télécharger l'application Lock-E", null, null);
         }
     }
 }

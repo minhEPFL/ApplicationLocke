@@ -21,16 +21,17 @@
         />
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="33dp"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:background="#ccc"
-        android:layout_marginVertical="30sp"
+    <EditText
+        android:id="@+id/nom"
+        android:layout_width="match_parent"
         android:layout_marginHorizontal="30sp"
-        android:text="Enter the phone number of your friend" />
+        android:layout_marginVertical="50sp"
+        android:background="#ccc"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter the name of your friend" />
 
 
     <LinearLayout
