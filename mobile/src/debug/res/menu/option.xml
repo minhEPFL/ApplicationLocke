@@ -4,15 +4,11 @@
     android:id="@+id/menu">
 
     <item android:id="@+id/option" android:title="Options"></item>
-    <!--!
     <item android:id="@+id/ami1" android:title="Minh" android:checkable="true"/>
-    <item android:id="@+id/ami2" android:title="Julien" android:checkable="true"/>
     <item android:id="@+id/ami3" android:title="Nicolas" android:checkable="true"/>
     <item android:id="@+id/ami4" android:title="Terry" android:checkable="true"/>
     <item android:id="@+id/ami5" android:title="Guilain" android:checkable="true"/>
     <item android:id="@+id/ami6" android:title="Maxime" android:checkable="true"/>
--->
-
 
 
 </menu>

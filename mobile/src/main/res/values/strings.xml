@@ -10,9 +10,10 @@
     <string name="MapActivityLocate">FIND</string>
     <string name="switchsharebike">  Share          </string>
     <string name="sharebike">  Share my Bike         </string>
-    <string name="MainTitre">Lock-E</string>
+    <string name="MainTitre">LOCK-E</string>
     <string name="MainSwitch">Open/Close</string>
     <string name="linkbutton">Link</string>
     <string name="title_activity_maps">Map</string>
+    <string name="go_to">Go To</string>
 
 </resources>

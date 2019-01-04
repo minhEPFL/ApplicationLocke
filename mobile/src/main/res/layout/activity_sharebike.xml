@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:layout_margin="0dp"
     android:background="@drawable/velo"
     tools:context=".MainActivity" >
 
@@ -14,25 +14,23 @@
         android:text="@string/sharebike"
         android:layout_gravity="center"
         android:gravity="center"
-        android:background="#ccc"
+        android:background="#aacccccc"
         android:layout_marginTop="90dp"
         android:layout_marginBottom="75dp"
         android:textColor="#222"
         />
-
 
     <EditText
         android:id="@+id/nom"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="30sp"
         android:layout_marginVertical="50sp"
-        android:background="#ccc"
+        android:background="#aaaaaa"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter the name of your friend" />
-
+        android:hint="Enter the name of your friend" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,7 +41,7 @@
             android:id="@+id/numberfriend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#eee"
+            android:background="#bbb"
             android:ems="10"
             android:gravity="center"
             android:layout_marginHorizontal="10sp"
@@ -58,5 +56,4 @@
             android:layout_marginHorizontal="10sp"
             android:text="Share" />
     </LinearLayout>
-
 </LinearLayout>
